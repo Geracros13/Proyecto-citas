@@ -60,11 +60,10 @@ const Formulario = ({crearCita}) => {
             hora: '',
             sintomas: ''
         });
+    
+    //Para validar que solo me escriba numeros en DPI
 
-
-
-
-    } 
+    }
 
     return(
         <Fragment>
@@ -97,12 +96,14 @@ const Formulario = ({crearCita}) => {
                 />
                 <label>Documento de Identificación</label>
                 <input
-                    type="text"
+                    type="number"
                     name="dpi_paciente"
                     className="u-full-width"
                     placeholder="DPI"
                     onChange={actualizarState}
                     value={dpi_paciente}
+                    maxLength="16"
+
                 />
                 <h4>Datos de Ingreso</h4>
                 <label>Fecha de Ingreso</label>

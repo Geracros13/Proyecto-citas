@@ -94,7 +94,7 @@ input[type="time"] {
 }
 .button.eliminar,
 .button.eliminar:hover {
-  background-color: #c10059;
+  background-color: #67D76E;
   color: white;
   margin-top: 2rem;
 }
