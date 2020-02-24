@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: rgb(97,232,101);
+  /* background: rgb(97,232,101); */
   background: linear-gradient(90deg, rgba(97,232,101,1) 0%, rgba(21,140,159,1) 29%, rgba(0,212,255,1) 100%);
   min-height: 100%;
   padding-bottom: 5rem;
@@ -60,7 +60,7 @@ label {
 
 input[type="date"],
 input[type="time"] {
-  height: 38px;
+  height: 35px;
     padding: 6px 10px;
     background-color: #fff;
     border: 1px solid #D1D1D1;

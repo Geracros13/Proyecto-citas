@@ -14,10 +14,6 @@ const Formulario = ({crearCita}) => {
         sintomas: ''
     });
 
-    //Crear State para validar los inputs
-    const [error, actualizarError] = useState(false);
-
-
     //Funcion que se ejecuta cada que el usuario escribe en un input
     const actualizarState = e =>{
         actualizarCita({
@@ -33,17 +29,6 @@ const Formulario = ({crearCita}) => {
     //Cuando se envie el form
     const submitCita = e =>{
         e.preventDefault(); //Para prevenir el evento por defecto del form que antes enviava el form por el metodo get
-
-        //Validar si el usuario ingreso valores en todos los inputs
-        if (nom_paciente.trim() === '' || ape_paciente.trim() === '' || dpi_paciente.trim() === '' || fecha.trim() === '' ||
-         hora.trim() === '' || sintomas.trim() === '') {
-            actualizarError(true);
-            return;
-            
-        }
-
-        //Eliminar el mensaje de error si el usuario queria enviar un input vacio
-        actualizarError(false);
 
         //Asignar un ID
         cita.id = uuid();//Para que se me genere un id aleatorio
@@ -63,13 +48,12 @@ const Formulario = ({crearCita}) => {
     
     //Para validar que solo me escriba numeros en DPI
 
+
     }
 
     return(
         <Fragment>
             <h2>Crear Cita</h2>
-
-            {error ? <p className="alerta-error">Todos los campos son obligatorios :(</p>: null}
 
             <form
                 onSubmit={submitCita}
@@ -84,6 +68,7 @@ const Formulario = ({crearCita}) => {
                     placeholder="Nombres"
                     onChange={actualizarState}
                     value={nom_paciente}
+                    required
                 />
                 <label>Apellidos</label>
                 <input
@@ -93,6 +78,7 @@ const Formulario = ({crearCita}) => {
                     placeholder="Apellidos"
                     onChange={actualizarState}
                     value={ape_paciente}
+                    required
                 />
                 <label>Documento de Identificación</label>
                 <input
@@ -102,7 +88,7 @@ const Formulario = ({crearCita}) => {
                     placeholder="DPI"
                     onChange={actualizarState}
                     value={dpi_paciente}
-                    maxLength="16"
+                    required
 
                 />
                 <h4>Datos de Ingreso</h4>
@@ -113,6 +99,7 @@ const Formulario = ({crearCita}) => {
                     className="u-full-width"
                     onChange={actualizarState}
                     value={fecha}
+                    required
                 />
                 <label>Hora de Ingreso</label>
                 <input
@@ -121,6 +108,7 @@ const Formulario = ({crearCita}) => {
                     className="u-full-width"
                     onChange={actualizarState}
                     value={hora}
+                    required
                 />
                 <label>Síntomas</label>
                 <textarea
@@ -128,6 +116,7 @@ const Formulario = ({crearCita}) => {
                     name="sintomas"
                     onChange={actualizarState}
                     value={sintomas}
+                    required
                 ></textarea>
 
                 <button
