@@ -30,4 +30,11 @@ Cuando se terminen de instalar las dependencias, ejecuta este comando y listo!!
 $ npm start
 ```
 
+### Resultado final:
+
+![Resultado](public/quotes.png)
+
+## Contacto
+[Linkedin](https://gt.linkedin.com/in/manuel-flores-abb71a15a/%7Bcountry%3Dno%2C+language%3Dno%7D?trk=people-guest_profile-result-card_result-card_full-click)
+[Twitter](https://twitter.com/Gerardo_fq)
 
